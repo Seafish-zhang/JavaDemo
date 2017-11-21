@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://activemq.apache.org/schema/core
+        http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd">
+
+    <!-- ActiveMQ 连接工厂 -->
+    <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+    </bean>
+
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+        <property name="connectionFactory" ref="targetConnectionFactory"/>
+        <property name="maxConnections" value="10"/>
+    </bean>
+
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="pooledConnectionFactory"/>
+    </bean>
+
+    <!-- 消息消费者 start-->
+    <bean id="QueueReceiverA" class="listener.queue.QueueReceiverA"/>
+    <bean id="QueueReceiverB" class="listener.queue.QueueReceiverB"/>
+    <bean id="TopicSubscriberA" class="listener.topic.TopicSubscriberA"/>
+    <bean id="TopicSubscriberB" class="listener.topic.TopicSubscriberB"/>
+    <!-- 定义Queue监听器 -->
+    <jms:listener-container connection-factory="connectionFactory" acknowledge="auto">
+        <jms:listener destination="listener.queue" ref="QueueReceiverA"/>
+        <jms:listener destination="listener.queue" ref="QueueReceiverB"/>
+    </jms:listener-container>
+
+    <!-- 定义Topic监听器 -->
+    <jms:listener-container destination-type="topic" connection-factory="connectionFactory" acknowledge="auto">
+        <jms:listener destination="listener.topic" ref="TopicSubscriberA"/>
+        <jms:listener destination="listener.topic" ref="TopicSubscriberB"/>
+    </jms:listener-container>
+
+    <!-- 消息消费者 end -->
+
+
+</beans>
