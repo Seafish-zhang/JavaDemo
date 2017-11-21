@@ -10,9 +10,13 @@ public class Consumer {
         context.start();
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
-            ServerDemo serverDemo = (ServerDemo) context.getBean("demoService");
-            String hello = serverDemo.echo(scanner.nextLine());
+            String line = scanner.nextLine();
+            ServerDemo serverDemo = (ServerDemo) context.getBean("demoService1");
+            String hello = serverDemo.echo(line);
             System.out.println(hello);
+            ServerDemo serverDemo2 = (ServerDemo) context.getBean("demoService2");
+            String hello2 = serverDemo2.echo(line);
+            System.out.println(hello2);
         }
     }
 }

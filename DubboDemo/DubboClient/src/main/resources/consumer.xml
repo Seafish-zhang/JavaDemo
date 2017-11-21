@@ -13,6 +13,7 @@
     <dubbo:registry address="127.0.0.1:2181" protocol = "zookeeper"/>
 
 
-    <dubbo:reference interface="server.ServerDemo" id="demoService"/>
+    <dubbo:reference interface="server.ServerDemo" group="demo1" id="demoService1"/>
+    <dubbo:reference interface="server.ServerDemo" group="demo2" id="demoService2"/>
 
 </beans>

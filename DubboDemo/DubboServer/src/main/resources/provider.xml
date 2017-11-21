@@ -14,7 +14,12 @@
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <dubbo:service interface="server.ServerDemo" ref="demoService"/>
+    <dubbo:service group="demo1" interface="server.ServerDemo" ref="demoService1"/>
+    <dubbo:service group="demo2" interface="server.ServerDemo" ref="demoService2"/>
 
-    <bean id="demoService" class="server.ServerDemoImpl"/>
+
+    <bean id="demoService1" class="server.ServerDemoImpl"/>
+    <bean id="demoService2" class="server.ServerDemo2Impl"/>
+
+
 </beans>
