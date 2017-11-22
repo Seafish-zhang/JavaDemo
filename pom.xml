@@ -11,6 +11,7 @@
     <modules>
         <module>JmsDemo</module>
         <module>DubboDemo</module>
+        <module>DataStructure</module>
     </modules>
 
 
@@ -20,7 +21,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.0.1.RELEASE</version>
+            <version>4.3.12.RELEASE</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaDemo.iml" filepath="$PROJECT_DIR$/JavaDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaDemo/DataStructure/DataStructure.iml" filepath="$PROJECT_DIR$/../JavaDemo/DataStructure/DataStructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaDemo/DubboDemo/DubboClient/DubboClient.iml" filepath="$PROJECT_DIR$/../JavaDemo/DubboDemo/DubboClient/DubboClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaDemo/DubboDemo/DubboDemo.iml" filepath="$PROJECT_DIR$/../JavaDemo/DubboDemo/DubboDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaDemo/DubboDemo/DubboServer/DubboServer.iml" filepath="$PROJECT_DIR$/../JavaDemo/DubboDemo/DubboServer/DubboServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaDemo/JavaDemo.iml" filepath="$PROJECT_DIR$/../JavaDemo/JavaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/../JavaDemo/JmsDemo/JmsConsumer/JmsConsumer.iml" filepath="$PROJECT_DIR$/../JavaDemo/JmsDemo/JmsConsumer/JmsConsumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/../JavaDemo/JmsDemo/JmsDemo.iml" filepath="$PROJECT_DIR$/../JavaDemo/JmsDemo/JmsDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/../JavaDemo/JmsDemo/JmsProducer/JmsProducer.iml" filepath="$PROJECT_DIR$/../JavaDemo/JmsDemo/JmsProducer/JmsProducer.iml" />

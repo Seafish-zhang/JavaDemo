@@ -6,15 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="DataStructure" />
+        <module name="DubboClient" />
+        <module name="DubboServer" />
         <module name="JmsConsumer" />
         <module name="JmsProducer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JavaDemo" target="1.5" />
-      <module name="JmsConsumer" target="1.5" />
-      <module name="JmsDemo" target="1.5" />
-      <module name="JmsProducer" target="1.5" />
+      <module name="DataStructure" target="1.9" />
+      <module name="DubboClient" target="1.9" />
+      <module name="DubboDemo" target="1.9" />
+      <module name="DubboServer" target="1.9" />
+      <module name="JavaDemo" target="1.9" />
+      <module name="JmsConsumer" target="1.9" />
+      <module name="JmsDemo" target="1.9" />
+      <module name="JmsProducer" target="1.9" />
     </bytecodeTargetLevel>
   </component>
 </project>
