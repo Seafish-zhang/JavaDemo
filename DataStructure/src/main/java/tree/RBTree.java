@@ -473,8 +473,9 @@ public class RBTree<T extends Comparable<T>> {
         } else {
             this.root = child;
         }
-        if (color == BLACK)
+        if (color == BLACK) {
             removeFixUp(child, parent);
+        }
     }
 
     /**
