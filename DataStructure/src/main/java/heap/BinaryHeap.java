@@ -1,5 +1,7 @@
 package heap;
 
+import tree.HuffmanTree;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +12,23 @@ import java.util.List;
  * 两者基本相同，只是排序大小优先差别，这里只写二叉最大堆（BinaryMaxHeap）
  */
 public class BinaryHeap<T extends Comparable<T>> {
+    public List<T> getHeap() {
+        return heap;
+    }
+
     private List<T> heap;  // 用动态数组（ArrayList<>）来表达二叉堆
 
     public BinaryHeap() {
         this.heap = new ArrayList<>();
     }
+
+    public BinaryHeap(T[] a) {
+        this.heap = new ArrayList<>();
+        for (T data : a){
+            insert(data);
+        }
+    }
+
 
     /**
      * 插入
@@ -99,6 +113,16 @@ public class BinaryHeap<T extends Comparable<T>> {
             sb.append(" ");
         }
         return sb.toString();
+    }
+
+    public T pollTop(){
+        if (heap.size() == 0){
+            return null;
+        }
+
+        T  huffmanNode = heap.get(0);
+        delete(huffmanNode);
+        return huffmanNode;
     }
 
 }
