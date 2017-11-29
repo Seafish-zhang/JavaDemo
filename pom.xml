@@ -12,6 +12,7 @@
         <module>JmsDemo</module>
         <module>DubboDemo</module>
         <module>DataStructure</module>
+        <module>AlgorithmDemo</module>
     </modules>
 
 
